@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import './index.css';
+import React,{Component} from 'react'
+import { books } from "./books";
+import Book from "./book";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class BookList extends Component{
+  render(){
+    return( 
+    <div className="booklist">
+        {books.map((book) => {
+          return <Book key={book.id} book ={book}/>
+        })}
+    </div> 
+    )
+  }
 }
-
-export default App;
+export default BookList;
